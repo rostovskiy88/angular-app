@@ -11,10 +11,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent {
-  allowNewSever = false;
-  serverCreationStatus = 'No server was created';
-  serverName = 'Test server';
-  username = '';
+  allowNewSever: boolean = false;
+  serverCreationStatus: string = 'No server was created';
+  serverName = '';
+  serverCreated = false;
 
   constructor() {
     setTimeout(() => {
@@ -23,6 +23,7 @@ export class ServersComponent {
   }
 
   onCreateSever() {
+    this.serverCreated = true;
     this.serverCreationStatus = 'Server was created! Name is' + this.serverName;
   }
 
